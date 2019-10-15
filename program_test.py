@@ -1,4 +1,5 @@
 import unittest
+import xmlrunner
 from ddt import ddt, data, idata, file_data, unpack
 
 from program import *
@@ -25,3 +26,6 @@ class TestProgram(unittest.TestCase):
     @unpack
     def test_div(self, a, b, x):
         self.assertEqual(div(a, b), x)
+
+if __name__ == '__main__':
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
